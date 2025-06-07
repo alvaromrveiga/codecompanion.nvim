@@ -389,6 +389,14 @@ local defaults = {
           callback = "keymaps.goto_file_under_cursor",
           description = "Open the file under cursor in a new tab.",
         },
+        list_buffer = {
+          modes = {
+            n = "gb",
+          },
+          index = 20,
+          callback = "keymaps.list_buffer",
+          description = "Toggle buffer listed status",
+        },
       },
       opts = {
         blank_prompt = "", -- The prompt to use when the user doesn't provide a prompt

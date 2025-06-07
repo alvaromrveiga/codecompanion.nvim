@@ -76,6 +76,7 @@ The keymaps available to the user in normal mode are:
 - `<C-c>` to close the chat buffer
 - `q` to stop the current request
 - `ga` to change the adapter for the currentchat
+- `gb` - Toggle buffer listed status
 - `gc` to insert a codeblock in the chat buffer
 - `gd` to view/debug the chat buffer's contents
 - `gf` to fold any codeblocks in the chat buffer

@@ -641,4 +641,22 @@ M.goto_file_under_cursor = {
   end,
 }
 
+---Toggle the buffer's listed status
+---@param chat CodeCompanion.Chat
+---@return nil
+M.list_buffer = function(chat)
+  local bufnr = chat.bufnr
+  local is_listed = vim.bo[bufnr].buflisted
+
+  vim.bo[bufnr].buflisted = not is_listed
+
+  local status = vim.bo[bufnr].buflisted and "listed" or "unlisted"
+  require("codecompanion.utils").notify(string.format("Buffer %s", status))
+
+  vim.schedule(function()
+    vim.cmd("redrawstatus!")
+    vim.cmd("redrawtabline")
+  end)
+end
+
 return M
